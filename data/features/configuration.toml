@@ -1,5 +1,5 @@
 title = "Easy configuration"
-doc = "https://github.com/jota-one/drosse/tree/master/packages/core#the-drossercjs-file-configure-your-drosse"
+doc = "https://github.com/jota-one/drosse/tree/master#the-drossercjs-file-configure-your-drosse"
 
 [icon]
 name = "config"

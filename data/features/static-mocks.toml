@@ -1,5 +1,5 @@
 title = "Static mocks"
-doc =  "https://github.com/jota-one/drosse/tree/master/packages/core#static-mocks-in-separated-files"
+doc =  "https://github.com/jota-one/drosse/tree/master#static-mocks-in-separated-files"
 
 [icon]
 name = "json"

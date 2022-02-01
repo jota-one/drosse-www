@@ -1,5 +1,5 @@
 title = "Data persistence"
-doc = "https://github.com/jota-one/drosse/tree/master/packages/core#drosse-db-api"
+doc = "https://github.com/jota-one/drosse/tree/master#drosse-db-api"
 
 [icon]
 name = "database"

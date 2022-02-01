@@ -1,5 +1,5 @@
 title = "Throttling"
-doc = "https://github.com/jota-one/drosse/tree/master/packages/core#throttling"
+doc = "https://github.com/jota-one/drosse/tree/master#throttling"
 
 [icon]
 name = "time"

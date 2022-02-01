@@ -111,7 +111,7 @@ You can extend Drosse with custom
 to fulfill your use cases.
 
 Some basic ones are built-in (CORS, logging, etc.) and we provide a useful
-example of a [session middleware](https://github.com/jota-one/drosse/tree/master/packages/core/examples/session)
+example of a [session middleware](https://github.com/jota-one/drosse/tree/master/examples/session)
 in case you need to mock user login in your app.
 {% end %}
 
