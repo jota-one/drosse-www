@@ -1,13 +1,12 @@
 <script>
-  import Icon from './Icon.svelte'
+  import Icon from "./Icon.svelte";
 
-  export let command = ''
-
+  export let command = "";
 </script>
 
 <button
   on:click={() => {
-    navigator.clipboard.writeText(command)
+    navigator.clipboard.writeText(command);
   }}
 >
   <code>{command}</code>
@@ -18,7 +17,7 @@
   button {
     display: flex;
     align-items: center;
-    padding: 0.75rem;
+    padding: 0.65rem;
     white-space: nowrap;
     font-size: 0.8rem;
     color: var(--j-npm-button-text-color, rgb(80, 80, 80));
@@ -38,5 +37,4 @@
     margin: 0 0.75rem -0.1rem 0;
     color: var(--j-npm-button-text-color, rgb(80, 80, 80));
   }
-
 </style>

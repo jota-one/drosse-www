@@ -1,14 +1,41 @@
 header {
     position: relative;
-    padding: 1.5rem 2rem 0;
     z-index: 1;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 1rem;
+
+        .bmc-btn-container {
+            transform: scale(0.8);
+        }
+    }
+
+    .support-us {
+        display: flex;
+        align-items: center;
+        
+        p {
+            display: none;
+            font-size: 0.8rem;
+            opacity: 0.7;
+
+            @media (--s) {
+                display: block;
+            }
+        }
+    }
 }
 
 main {
     padding: 3rem;
-    background: var(--c-gray-light);
+    background: var(--c-white);
+    box-shadow: 0 0 10rem rgba(0,0,0, 0.1);
 
     .dark & {
         background: var(--c-gray-darker);
+        box-shadow: 0 0 10rem rgba(255,255,255, 0.1);
     }
 }
