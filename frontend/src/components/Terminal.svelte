@@ -1,81 +1,80 @@
 <script>
-  import { onMount } from 'svelte'
-  import Typed from 'typed.js'
+  import { onMount } from "svelte";
+  import Typed from "typed.js";
 
-  export let steps = ''
-  let currentCommand = 0
-  let shell
+  export let steps = "";
+  let currentCommand = 0;
+  let shell;
 
-  $: _steps = JSON.parse(steps)
+  $: _steps = JSON.parse(steps);
 
   const typedOptions = {
     typeSpeed: 30,
     loop: false,
     startDelay: 1000,
-  }
+  };
 
   onMount(async () => {
     for (const step of _steps) {
-      await execute(step)
-      currentCommand++
+      await execute(step);
+      currentCommand++;
     }
-  })
+  });
 
   function execute(step) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       const cmdEl = shell.querySelector(
         `.command:nth-child(${currentCommand + 1})`
-      )
+      );
 
-      const el = cmdEl.querySelector('.typed')
+      const el = cmdEl.querySelector(".typed");
 
       const options = {
         ...typedOptions,
         ...step.options,
         strings: [step.command],
         onComplete: onTypedCommplete,
-      }
+      };
 
       async function onTypedCommplete(self) {
         if (!options.loop) {
-          self.el.parentElement.querySelector('.typed-cursor').style.display =
-            'none'
+          self.el.parentElement.querySelector(".typed-cursor").style.display =
+            "none";
         }
 
-        let i = 0
+        let i = 0;
 
         const interval = window.setInterval(() => {
           if (i === step.output.length - 1) {
-            window.clearInterval(interval)
-            resolve(true)
+            window.clearInterval(interval);
+            resolve(true);
           }
 
-          const lineEl = cmdEl.querySelector(`.line-${i}`)
-          lineEl.classList.add('show')
-          lineEl.innerHTML = lineEl.innerHTML.replace('js:now', now())
-          i++
-        }, 50)
+          const lineEl = cmdEl.querySelector(`.line-${i}`);
+          lineEl.classList.add("show");
+          lineEl.innerHTML = lineEl.innerHTML.replace("js:now", now());
+          i++;
+        }, 50);
       }
 
-      cmdEl.classList.add('show')
-      new Typed(el, options)
-    })
+      cmdEl.classList.add("show");
+      new Typed(el, options);
+    });
   }
 
   function pad(input) {
-    var str = input.toString()
+    var str = input.toString();
     try {
-      return str.padStart(2, '0')
+      return str.padStart(2, "0");
     } catch (e) {
-      return str
+      return str;
     }
   }
 
   function now() {
-    const d = new Date()
-    return `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`
+    const d = new Date();
+    return `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
   }
-
 </script>
 
 <div class="terminal">
@@ -98,7 +97,7 @@
 </div>
 
 <style lang="postcss">
-  @import '../styles/_media.pcss';
+  @import "../styles/_media.pcss";
 
   .terminal {
     position: relative;
@@ -113,23 +112,23 @@
       var(--j-terminal-box-shadow-color, rgb(0 0 0 / 20%));
 
     .ratio {
-      content: '';
+      content: "";
       display: block;
       height: 0;
       width: 100%;
-      padding-bottom: 100%;
+      padding-bottom: 110%;
 
       @media (--xs) {
-        padding-bottom: 75%;
+        padding-bottom: 78%;
       }
 
       @media (--s) {
-        padding-bottom: 65%;
+        padding-bottom: 70%;
         min-width: 35rem;
       }
 
       @media (--m) {
-        padding-bottom: 57.5%;
+        padding-bottom: 70%;
       }
     }
   }
@@ -203,5 +202,4 @@
   :global .opacity-25 {
     opacity: 0.25;
   }
-
 </style>

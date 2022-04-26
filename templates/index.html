@@ -10,43 +10,35 @@
       <span class="hidden">Drosse</span>
       <b class="sub">The ultimate mock server</b>
     </h1>
+    <h2>
+      Drosse is a stateful and programmable mock server written in javascript.
+    </h2>
     <j-npm-button command="npm i -D @jota-one/drosse"></j-npm-button>
   </div>
   {{ macros::terminal(session="data/terminal/drosse_serve.json") }}
 </section>
 <section class="summary container">
-  <h2>
-    Drosse is a stateful and programmable mock server written in javascript.
-  </h2>
   <div>
     <p>
-      It is based on <a href="https://expressjs.com/" target="_blank">express</a>
-      and uses <a href="https://github.com/techfort/LokiJS" target="_blank">loki</a>
-      to store your mock data in memory so you can modify them in your
+      Based on <a href="https://expressjs.com/" target="_blank">express</a>,
+      Drosse uses <a href="https://github.com/techfort/LokiJS" target="_blank">loki</a> to store your mock data in
+      memory so you can
+      modify them in your
       <code class="handler">POST</code>,
       <code class="handler">PUT</code>,
       <code class="handler">PATCH</code> and
       <code class="handler">DELETE</code> requests.
     </p>
-    <p>
-      It comes out of the box with all the features you need to completely simulate
-      your backend API, making it the best companion for any frontend developer 🤓
+    <p class="secondary">
+      It comes out of the box with all the features you need to completely
+      simulate your backend API, making it the best companion for any frontend
+      developer 🤓
     </p>
   </div>
-  <a
-    href="https://github.com/jota-one/drosse/tree/master#readme"
-    target="_blank"
-    class="button icon-arrow-right"
-  >
-    Check the docs
-  </a>
-</section>
-<section class="summary support">
-  <div class="intro-text">
-    Want to help us implement more cool features? Or just say thank you for the existing ones maybe ^^
-  </div>
-  <div class="button">
-    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="drosse" data-color="#22C55e" data-emoji=""  data-font="Cookie" data-text="Buy us a coffee" data-outline-color="#000000" data-font-color="#FFFFFF" data-coffee-color="#3a2516" ></script>
+  <div class="actions">
+    <a href="https://github.com/jota-one/drosse/tree/master#readme" target="_blank" class="button icon-arrow-right">
+      Check the docs
+    </a>
   </div>
 </section>
 {% endblock hero %}

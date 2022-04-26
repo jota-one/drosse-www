@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem 0 3rem;
+    margin: 1rem 0 0;
     font-size: 1.5rem;
     line-height: 1.2;
 
@@ -39,7 +39,19 @@
     }
 
     svg {
-      margin-bottom: 1rem;
+      margin: 1rem 0;
+
+      @media (--xs) {
+        height: 5rem;
+      }
+  
+      @media (--s) {
+        height: 5rem;
+      }
+  
+      @media (--m) {
+        height: 5rem;
+      }
     }
 
     b {
@@ -47,6 +59,16 @@
       margin: 0 1rem;
       font-weight: 900;
     }
+  }
+
+  h2 {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  j-npm-button {
+    margin-top: 2rem;
   }
 
   j-terminal {
@@ -74,35 +96,6 @@
   bottom: 0;
   opacity: 0.15;
   z-index: -1;
-
-  &:before,
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    border-radius: 50%;
-  }
-
-  &:before {
-    top: 25rem;
-    left: calc(50% - 15rem);
-    width: 15rem;
-    height: 15rem;
-    background: rgb(52, 246, 107);
-    filter: blur(2rem);
-    z-index: 1;
-    mix-blend-mode: luminosity;
-  }
-
-  &:after {
-    top: 15rem;
-    right: calc(50% - 25rem);
-    width: 25rem;
-    height: 25rem;
-    background: deepskyblue;
-    filter: blur(5rem);
-    z-index: 0;
-  }
 
   .dark & {
     opacity: 0.075;
